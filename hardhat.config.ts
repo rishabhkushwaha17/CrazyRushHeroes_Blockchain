@@ -4,10 +4,7 @@ import { configVariable } from "hardhat/config";
 import { SensitiveString } from "hardhat/types/config";
 import "@nomicfoundation/hardhat-ethers";
 
-import * as dotenv from "dotenv";
-dotenv.config();
-
-const privateKey = process.env.PRIVATE_KEY || "";
+const privateKey = configVariable("PRIVATE_KEY");
 
 const config: HardhatUserConfig = {
   plugins: [hardhatToolboxMochaEthersPlugin],
@@ -43,7 +40,7 @@ const config: HardhatUserConfig = {
   },
   verify:{
    etherscan: {
-    apiKey: <SensitiveString>process.env.ETHERSCAN_API_KEY,
+    apiKey: configVariable("ETHERSCAN_API_KEY"),
     enabled:true,
     },
   }

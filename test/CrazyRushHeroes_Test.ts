@@ -3,11 +3,11 @@ import { network } from "hardhat";
 
 const { ethers } = await network.connect();
 
-describe("WreckLeagueCore", function () {
+describe("CrazyRushHeroes", function () {
   let core:any, owner:any, user:any, treasury:any, token:any;
   const TOKEN_NAME = "TEST";
   const PRICES = [ethers.parseEther("10"), ethers.parseEther("19"), ethers.parseEther("27")];
-  const ITEM_AMOUNT = 1n; // 1 fuel
+  const ITEM_AMOUNT = 1n;
 
   beforeEach(async () => {
      [owner, user, treasury] = await ethers.getSigners();
